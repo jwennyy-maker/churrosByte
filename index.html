@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+ <title>ChurosByte - Pesan Churros</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="images/profile.png">
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#atas">Churros<span>Byte</span></a>
+    <div class="nav">
+      <a class="btn teal ig-nav" id="igNav" href="#" target="_blank" rel="noopener">Instagram</a>
+      <button class="btn yellow" id="openCart" aria-label="Buka keranjang">Keranjang <span class="badge" id="count">0</span></button>
+    </div>
+  </div>
+</header>
+
+<main id="atas">
+  <div class="hero">
+    <div class="wrap">
+      <div>
+        <h1>Churros bite, hangat &amp; ceria!</h1>
+        <p>Gigitan kecil renyah di luar, lembut di dalam. Pilih rasa favoritmu dan pesan langsung dari sini.</p>
+        <div class="cta">
+          <a class="btn yellow" href="#menu">Lihat menu</a>
+          <a class="btn grape" id="igHero" href="#" target="_blank" rel="noopener">Ikuti Instagram kami</a>
+        </div>
+      </div>
+      <div class="stage" id="stage" aria-hidden="true"></div>
+    </div>
+  </div>
+  <svg class="wave" viewBox="0 0 1200 36" preserveAspectRatio="none" aria-hidden="true" style="background:var(--bg)"><path d="M0 0H1200V10Q1150 36 1100 10T1000 10T900 10T800 10T700 10T600 10T500 10T400 10T300 10T200 10T100 10T0 10Z" fill="#FF3D81"/></svg>
+
+  <section id="menu">
+    <div class="wrap">
+      <div class="head">
+        <h2>Pilih menu kamu</h2>
+        <p>Pilih ukuran box, lalu tekan Tambah. Harga menyesuaikan ukuran.</p>
+      </div>
+      <div class="grid" id="grid"></div>
+    </div>
+  </section>
+
+  <section class="steps" id="cara">
+    <div class="wrap">
+      <div class="head"><h2>Cara pesan</h2></div>
+      <ol>
+  <li>
+    <b>Pilih menu</b>
+    Lihat menu dan harga yang tersedia di website.
+  </li>
+
+  <li>
+    <a id="stepGform" href="#" target="_blank"
+       rel="noopener"
+       style="color:inherit;text-decoration:none">
+      <b>Isi data</b>
+      Klik di sini untuk mengisi data pesanan melalui Google Form.
+    </a>
+  </li>
+
+  <li>
+    <b>Kirim pesanan</b>
+    Kirim formulir setelah semua data terisi.
+  </li>
+
+  <li>
+    <b>Tunggu hangatnya</b>
+    Kami akan mengonfirmasi pesananmu melalui WhatsApp.
+  </li>
+</ol>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <h2>Yuk, pesan sekarang!</h2>
+    <div class="row">
+      <button class="btn yellow" id="openCart2">Buka keranjang</button>
+      <a class="btn teal" id="igFoot" href="#" target="_blank" rel="noopener">Instagram</a>
+      <a class="btn" id="gfFoot" href="#" target="_blank" rel="noopener">Google Form</a>
+    </div>
+  </div>
+</footer>
+
+<div class="scrim" id="scrim"></div>
+<aside class="panel" id="panel" aria-label="Keranjang pesanan" aria-hidden="true">
+  <header><h2>Keranjang</h2><button class="x" id="closeCart" aria-label="Tutup keranjang">&#10005;</button></header>
+  <div class="inner">
+    <div id="lines"></div>
+    <div class="total" id="totalRow" hidden><span>Total</span><span id="total">Rp0</span></div>
+    <form class="f" id="form" onsubmit="return false">
+      <label>Nama<input id="nama" autocomplete="name" placeholder="Nama kamu"></label>
+      <label>Nomor WhatsApp<input id="wa" inputmode="tel" autocomplete="tel" placeholder="08xxxxxxxxxx"></label>
+      <label>Metode
+        <select id="metode"><option>Ambil sendiri</option><option>Diantar</option></select>
+      </label>
+      <label id="alamatWrap" hidden>Alamat antar<textarea id="alamat" placeholder="Alamat lengkap"></textarea></label>
+      <label>Catatan<textarea id="catatan" placeholder="Contoh: saus dipisah"></textarea></label>
+      <div class="acts">
+        <button type="button" class="btn" id="sendForm">Kirim lewat Google Form</button>
+        <button type="button" class="btn grape" id="sendIG">Kirim lewat DM Instagram</button>
+      </div>
+      <p class="help">Ringkasan pesananmu otomatis disalin. Tempel di kolom pesanan jika tidak terisi sendiri.</p>
+      <textarea class="sum" id="sum" readonly aria-label="Ringkasan pesanan" hidden></textarea>
+    </form>
+  </div>
+</aside>
+<div class="toast" id="toast" role="status"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
